@@ -30,7 +30,7 @@ import 'package:tiled/tiled.dart' show ObjectGroup, TmxObject;
 
 The TiledComponent class is a component for use in building a [GameEntity](https://github.com/juanitogan/pogo/blob/master/doc/game_entity.md).  Currently, Tiled support only renders the visible layers.  [Other advanced features are not yet supported.](https://github.com/flame-engine/tiled.dart/blob/master/CHANGELOG.md)
 
-**TODO: the old version of this is ~~working~~ \[recently broken by a tiled update\] but this is slated to be rebuilt; will rewrite doc after that.**
+**TODO: the old version of this is working but this is slated to be rebuilt; will rewrite doc after that.**
 
 ----
 
