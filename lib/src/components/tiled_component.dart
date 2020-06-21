@@ -22,8 +22,6 @@ class TiledComponent {
     //image = await Pogo.rasterCache.load(map.tilesets[0].image.source); //TODO usage?
     images = await _loadImages(map);
     _loaded = true;
-    print(map.width);
-    print(map.height);
   }
 
   Future<TileMap> _loadMap() {
@@ -61,8 +59,10 @@ class TiledComponent {
     //TODO NOTE: This is broken until tiled 0.4.0 fixes their x/y-order issues and resultant array RangeError.
     //TODO       Might fix myself but plugin is terribly short on documentation and change notes.
     //TODO       Issue submitted.
-    layer.tiles.forEach((column) {
-      column.forEach((tile) {
+    //TODO       Reverting to tiled 0.2.1 for now .
+    //0.4.0//layer.tiles.forEach((column) {
+    //0.4.0//  column.forEach((tile) {
+    layer.tiles.forEach((tile) {
         if (tile == null || tile.gid == 0) {
           return;
         }
@@ -72,12 +72,12 @@ class TiledComponent {
         final rect = tile.computeDrawRect();
         final src = Rect.fromLTWH(rect.left.toDouble(), rect.top.toDouble(),
             rect.width.toDouble(), rect.height.toDouble());
-        //TODO px and py instead of x and y now??? but why?
+        //TODO tiled 0.4.0: px and py instead of x and y now??? but why?
         final dst = Rect.fromLTWH(tile.x.toDouble(), tile.y.toDouble(),
             rect.width.toDouble(), rect.height.toDouble());
 
         GameCanvas.main.drawImageRect(image.source, src, dst, paint);
-      });
+      //0.4.0//});
     });
   }
 

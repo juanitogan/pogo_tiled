@@ -1,5 +1,6 @@
 name: pogo_tiled
 description: Plugin to the Pogo Game Engine that adds support for Tiled Map Editor files.
+homepage: https://github.com/juanitogan/pogo_tiled
 
 # The following line prevents the package from being accidentally published to
 # pub.dev using `pub publish`. This is preferred for private packages.
@@ -23,10 +24,10 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  pogo:
-    path: ../pogo/
-  tiled: ^0.4.0
-  #convert: ^2.1.1
+  pogo: ^0.2.1
+  tiled: ^0.2.1
+  #tiled: ^0.4.0 # see changelog for notes on this
+  #convert: ^2.1.1 # no idea why here; perhaps older tiled needed it
 
 dev_dependencies:
   flutter_test:
